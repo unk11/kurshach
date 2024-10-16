@@ -9,53 +9,68 @@
 <body>
     <header>
         <div class="logo">
-            <img class="logotip" src="images/crousan.png" alt="Логотип">
+            <img class="logotip" src="images/crousan.png" alt="Логотип" >
         </div>
-        <ul class="nav-menu">
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Оформить заказ</a></li>
-            <li><a href="#">Корзина</a></li>
-        </ul>
-        <button class="sing">Войти</button>
+        <button class="hamburger">&#9776;</button>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#">Меню</a></li>
+                <li><a href="#">Оформить заказ</a></li>
+                <li><a href="#">Корзина</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button class="sing">Войти</button>
+            <button class="sing">Зарегистрироваться</button>
+        </div>
     </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show-menu');
+        });
+    </script>    
 
     <main>
         <img class="img" src="images/asdasd.png" alt="">
             <h1 class="prod">Наша продукция</h1>
             <div class="wrapper">
                 <div class="products">
-                    <div class="card">
-                        <img class="card_img" src="images/tort.jpg" alt="">
+                    <a href="#" class="card">
+                        <img class="card_img" src="images/tort.jpg" >
                         <div class="card-text">Торты <br> ОТ 950 р.</div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="#" class="card">
                         <img class="card_img" src="images/pirojnie.jpg" alt="">
                         <div class="card-text">ПИРОЖНЫЕ <br> ОТ 90 р.</div>
-                    </div>
-                    <div class="card">
-                        <img class="card_img" src="images/kruassany.jpg" alt="">
+                    </a>
+                    <a href="#" class="card">
+                        <img class="card_img" src="images/kruassany.jpg" alt="" >
                         <div class="card-text">КРУАССАНЫ <br> ОТ 75 р.</div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="#" class="card">
                         <img class="card_img" src="images/baget.jpg" alt="">
                         <div class="card-text">БАГЕТЫ <br> ОТ 70 р.</div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="#" class="card">
                         <img class="card_img" src="images/shrtudeli.jpg" alt="">
                         <div class="card-text">ШТРУДЕЛИ <br> ОТ 240 р.</div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="#" class="card">
                         <img class="card_img" src="images/cheez.jpg" alt="">
                         <div class="card-text">ЧИЗКЕЙКИ <br> ОТ 240 р.</div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="#" class="card">
                         <img class="card_img" src="images/tir.jpg" alt="">
                         <div class="card-text">ТИРАМИСУ <br> ОТ 260 р.</div>
-                    </div>
-                    <div class="card">
+                    </a>
+                    <a href="#" class="card">
                         <img class="card_img" src="images/maff.png" alt="">
                         <div class="card-text">МАФФИНЫ <br> ОТ 110 р.</div>
-                    </div>
+                    </a>
                 </div>
             </div>  
     </main>
