@@ -17,14 +17,14 @@ session_start();
         <button class="hamburger">&#9776;</button>
         <div class="nav-container">
             <ul class="nav-menu">
-                <li><a href="#">Меню</a></li>
+                <li><a href="./menu.php">Меню</a></li>
                 <li><a href="#text">О нас</a></li>
                 <li><a href="./korzina.html">Корзина</a></li>
             </ul>
         </div>
         <div class="buttons">
             <?php if (isset($_SESSION['user'])): ?>
-                <a href="">
+                <a href="./orders.php">
                     <button class="sing">Оформить заказ</button>
                 </a>
                 <form action="logout.php" method="post" style="display:inline;">
