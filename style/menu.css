@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
+.quantity-control {
+    display: none; /* Скрываем управление количеством по умолчанию */
+}
 .container {
     max-width: 800px;
     margin: 50px auto;

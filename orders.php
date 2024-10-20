@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,24 +18,24 @@
             </div>
 
             <div class="form-group">
-                <label for="order-date">Дата заказа:</label>
-                <input type="text" id="order-date" name="order_date" >
+                <label for="delivery-date">Дата доставки:</label>
+                <input type="date" id="delivery-date" name="delivery_date" required>
             </div>
 
             <div class="form-group">
-                <label for="order-time">Время заказа:</label>
-                <input type="text" id="order-time" name="order_time" >
+                <label for="delivery-time">Время доставки:</label>
+                <input type="time" id="delivery-time" name="delivery_time" required>
             </div>
 
             <div class="form-group">
-                <label for="quantity">Количество:</label>
-                <input type="text"  name="quantity" >
+                <label for="payment-method">Способ оплаты:</label>
+                <select id="payment-method" name="payment_method" required>
+                    <option value="cash">Наличными при получении</option>
+                    <option value="card">Картой при получении</option>
+                </select>
             </div>
 
-            <div class="form-group">
-                <label for="total-sum">Итого:</label>
-                <input type="text" id="total-sum" name="total_sum" >
-            </div>
+            
 
             <div class="buttons">
                 <button type="submit" class="submit-order">Подтвердить заказ</button>
@@ -43,5 +43,5 @@
             </div>
         </form>
     </div>
-</head>
+</body>
 </html>

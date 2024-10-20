@@ -19,7 +19,7 @@ session_start();
             <ul class="nav-menu">
                 <li><a href="./menu.php">Меню</a></li>
                 <li><a href="#text">О нас</a></li>
-                <li><a href="./korzina.html">Корзина</a></li>
+                <li><a href="./korzina.php">Корзина</a></li>
             </ul>
         </div>
         <div class="buttons">
