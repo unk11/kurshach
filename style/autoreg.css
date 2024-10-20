@@ -63,3 +63,14 @@ a {
 a:hover {
     text-decoration: underline;
 }
+.message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.error {
+    color: red;
+}
+.form-group {
+    margin-bottom: 15px;
+}

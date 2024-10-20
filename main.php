@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,17 +18,26 @@
         <div class="nav-container">
             <ul class="nav-menu">
                 <li><a href="#">Меню</a></li>
-                <li><a href="#">Оформить заказ</a></li>
+                <li><a href="#text">О нас</a></li>
                 <li><a href="./korzina.html">Корзина</a></li>
             </ul>
         </div>
         <div class="buttons">
-            <a href="./login.html">
-                <button class="sing">Войти </button>
-            </a>
-            <a href="./register.html">
-                <button class="sing">Зарегистрироваться <a href=""></button>
-            </a>   
+            <?php if (isset($_SESSION['user'])): ?>
+                <a href="">
+                    <button class="sing">Оформить заказ</button>
+                </a>
+                <form action="logout.php" method="post" style="display:inline;">
+                    <button class="sing" type="submit">Выйти</button>
+                </form>
+            <?php else: ?>
+                <a href="./login.php">
+                    <button class="sing">Войти</button>
+                </a>
+                <a href="./register.php">
+                    <button class="sing">Зарегистрироваться</button>
+                </a>
+            <?php endif; ?>
         </div>
     </header>
 
@@ -99,7 +111,7 @@
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section about">
-                <h3>О нас</h3>
+                <h3 id="text">О нас</h3>
                 <p>Кондитерская «Сахарок» с 2018 года радует жителей Перми вкусными тортами и десертами. Мы используем только натуральные ингредиенты и создаем сладости для любых событий!</p>
             </div>
     
