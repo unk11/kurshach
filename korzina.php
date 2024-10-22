@@ -100,10 +100,14 @@ foreach ($_SESSION['cart'] as $item) {
             <p><strong>Общая сумма: <?= $total ?> р.</strong></p>
         </div>
 
-        <div class="buttons">
-            <a href="menu.php" class="continue">Продолжить покупки</a>
-            <button class="checkout">Оформить заказ</button>
-        </div>
+    <div class="buttons">
+    <a href="menu.php" class="continue">Продолжить покупки</a>
+    <form action="orders.php" method="POST">
+        <input type="hidden" name="items_ordered" value='<?= json_encode($_SESSION['cart'], JSON_HEX_TAG) ?>'>
+        <input type="hidden" name="total_cost" value="<?= $total ?>">
+        <button type="submit" class="checkout">Оформить заказ</button>
+    </form>
+</div>
     </div>
 </body>
 </html>
