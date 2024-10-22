@@ -10,7 +10,8 @@
     <div class="container">
         <h2>Оформление заказа</h2>
 
-        <form action="submit_order.php" method="POST" class="order-form">
+        
+        <form action="submit_order.php" method="POST" class="order-form"> 
 
             <div class="form-group">
                 <label for="client-id">ФИО:</label>
