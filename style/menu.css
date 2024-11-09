@@ -33,7 +33,6 @@ h1 {
     margin-bottom: 20px;
     padding: 15px;
     border-bottom: 1px solid #ccc;
-    align-items: flex-start;
 }
 
 .item-info {
@@ -78,4 +77,45 @@ h1 {
 
 .add-to-cart:hover {
     background-color: #357ab7;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+.perehod {
+    background-color: #f5d48f;
+    padding: 15px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.perehod nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.perehod nav ul li {
+    display: inline;
+}
+
+.perehod nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.perehod nav ul li a:hover {
+    background-color: #f5d48f;
+    color: #e6f0ff;
 }

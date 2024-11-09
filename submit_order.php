@@ -15,9 +15,15 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     die("Корзина пуста. Невозможно оформить заказ.");
 }
 
+if (!isset($_SESSION['user_id'])) {
+    die("Пользователь не авторизован.");
+}
+
+$user_id = $_SESSION['user_id'];
 $fio = $_POST['client_id'] ?? '';
 $delivery_date = $_POST['delivery_date'] ?? '';
 $delivery_time = $_POST['delivery_time'] ?? '';
+$address = $_POST['address'] ?? '';
 $payment_method = $_POST['payment_method'] ?? '';
 $total_cost = $_POST['total_cost'] ?? 0;
 
@@ -30,32 +36,31 @@ $total_quantity = array_reduce($_SESSION['cart'], function($sum, $item) {
     return $sum + (int)$item['quantity'];
 }, 0);
 
-
-if (empty($fio) || empty($delivery_date) || empty($delivery_time) || empty($items_ordered_str)) {
+if (empty($fio) || empty($delivery_date) || empty($delivery_time) || empty($address) || empty($items_ordered_str)) {
     die("Все поля должны быть заполнены.");
 }
 
-$sql = "INSERT INTO Orders (OrderDate, OrderTime, ItemsOrdered, TotalCost, FIO, Quantity) 
-        VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO Orders (OrderDate, OrderTime, ItemsOrdered, TotalCost, FIO, Quantity, Address, client_id) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 
 if ($stmt) {
-    $customer_id = 1;  
-
     $stmt->bind_param(
-        "sssdsi",
+        "sssdsisi",
         $delivery_date,
         $delivery_time,
         $items_ordered_str,
         $total_cost,
         $fio,
-        $total_quantity
+        $total_quantity,
+        $address,
+        $user_id
     );
 
     if ($stmt->execute()) {
         echo "Заказ успешно оформлен!";
-
+        
         unset($_SESSION['cart']);
         header("Location: main.php");
         exit();

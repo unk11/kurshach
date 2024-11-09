@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница</title>
     <link rel="stylesheet" href="style/main.css">
+    
 </head>
 <body>
     <header>
@@ -24,9 +25,6 @@ session_start();
         </div>
         <div class="buttons">
             <?php if (isset($_SESSION['user'])): ?>
-                <a href="./orders.php">
-                    <button class="sing">Оформить заказ</button>
-                </a>
                 <form action="logout.php" method="post" style="display:inline;">
                     <button class="sing" type="submit">Выйти</button>
                 </form>
@@ -50,46 +48,46 @@ session_start();
         });
     </script>    
 
-    <main>
-        <img class="img" src="images/asdasd.png" alt="">
-            <h1 class="prod">Наша продукция</h1>
-            <div class="wrapper">
-                <div class="products">
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/tort.jpg" >
-                        <div class="card-text">Торты <br> ОТ 950 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/pirojnie.jpg" alt="">
-                        <div class="card-text">ПИРОЖНЫЕ <br> ОТ 90 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/kruassany.jpg" alt="" >
-                        <div class="card-text">КРУАССАНЫ <br> ОТ 75 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/baget.jpg" alt="">
-                        <div class="card-text">БАГЕТЫ <br> ОТ 70 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/shrtudeli.jpg" alt="">
-                        <div class="card-text">ШТРУДЕЛИ <br> ОТ 240 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/cheez.jpg" alt="">
-                        <div class="card-text">ЧИЗКЕЙКИ <br> ОТ 240 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/tir.jpg" alt="">
-                        <div class="card-text">ТИРАМИСУ <br> ОТ 260 р.</div>
-                    </a>
-                    <a href="#" class="card">
-                        <img class="card_img" src="images/maff.png" alt="">
-                        <div class="card-text">МАФФИНЫ <br> ОТ 110 р.</div>
-                    </a>
-                </div>
-            </div>  
-    </main>
+<main>
+    <img class="img" src="images/asdasd.png" alt="">
+    <h1 class="prod">Наша продукция</h1>
+    <div class="wrapper">
+        <div class="products">
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/tort.jpg" >
+                <div class="card-text">Торты <br> ОТ 950 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/pirojnie.jpg" alt="">
+                <div class="card-text">ПИРОЖНЫЕ <br> ОТ 90 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/kruassany.jpg" alt="" >
+                <div class="card-text">КРУАССАНЫ <br> ОТ 75 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/baget.jpg" alt="">
+                <div class="card-text">БАГЕТЫ <br> ОТ 70 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/shrtudeli.jpg" alt="">
+                <div class="card-text">ШТРУДЕЛИ <br> ОТ 240 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/cheez.jpg" alt="">
+                <div class="card-text">ЧИЗКЕЙКИ <br> ОТ 240 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/tir.jpg" alt="">
+                <div class="card-text">ТИРАМИСУ <br> ОТ 260 р.</div>
+            </a>
+            <a href="menu.php" class="card">
+                <img class="card_img" src="images/maff.png" alt="">
+                <div class="card-text">МАФФИНЫ <br> ОТ 110 р.</div>
+            </a>
+        </div>
+    </div>  
+</main>
     <div class="content">
         <h1>Добро пожаловать в кондитерскую «Сахарок»!</h1>
         <p>Давайте расскажем немного о нашей кондитерской и том, что мы предлагаем. Кондитерская «Сахарок» работает с 2018 года, и за это время мы накопили солидный опыт в создании тортов для жителей Перми.</p>

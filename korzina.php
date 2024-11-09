@@ -58,8 +58,17 @@ foreach ($_SESSION['cart'] as $item) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
     <link rel="stylesheet" href="style/korzina.css">
+    <link rel="stylesheet" href="style/menu.css">
 </head>
 <body>
+    <header class="perehod">
+        <nav>
+            <ul>
+                <li><a href="main.php">На главную</a></li>
+
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <h2>Ваша корзина</h2>
 

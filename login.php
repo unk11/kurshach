@@ -2,9 +2,9 @@
 session_start();
 
 $host = 'localhost';
-$dbname = 'sladosti'; 
-$username = 'root'; 
-$password = ''; 
+$dbname = 'sladosti';
+$username = 'root';
+$password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -25,10 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($user) {
         $_SESSION['user'] = $username;
+        $_SESSION['user_id'] = $user['id'];
         header("Location: main.php");
         exit();
     } else {
         $message = "Неверное имя пользователя или пароль.";
+    }
+}
+?>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = 'admin';
+    $password = 'password';
+
+    if ($_POST['username'] === $username && $_POST['password'] === $password) {
+        $_SESSION['loggedin'] = true;
+        header('Location: admin.php');
+        exit;
+    } else {
+        $error = "Неверное имя пользователя или пароль.";
     }
 }
 ?>
@@ -43,9 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <div class="container">
         <h2>Авторизация</h2>
+        <?php if ($message): ?>
+            <div class="message error">
+                <?= htmlspecialchars($message) ?>
+            </div>
+        <?php endif; ?>
+        
         <form action="login.php" method="post">
             <input type="text" name="username" placeholder="Имя пользователя" required>
+            <br>    <br>
             <input type="password" name="password" placeholder="Пароль" required>
+            <br>  <br>
             <button type="submit">Войти</button>
         </form>
         <p>Нет аккаунта? <a href="register.php">Зарегистрироваться</a></p>

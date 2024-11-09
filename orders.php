@@ -9,8 +9,16 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оформление заказа</title>
     <link rel="stylesheet" href="style/order.css">
+    <link rel="stylesheet" href="style/menu.css">
 </head>
 <body>
+    <header class="perehod">
+        <nav>
+            <ul>
+                <li><a href="main.php">На главную</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <h2>Оформление заказа</h2>
 
@@ -31,6 +39,12 @@ session_start();
             </div>
 
             <div class="form-group">
+                <label for="address">Адрес доставки:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+
+            <div class="form-group">
                 <label for="payment-method">Способ оплаты:</label>
                 <select id="payment-method" name="payment_method" required>
                     <option value="cash">Наличными при получении</option>
@@ -45,7 +59,7 @@ session_start();
 
             <div class="buttons">
                 <button type="submit" class="submit-order">Подтвердить заказ</button>
-                <a href="card.html" class="back-to-cart">Вернуться в корзину</a>
+                <a href="korzina.php" class="back-to-cart">Вернуться в корзину</a>
             </div>
         </form>
     </div>
